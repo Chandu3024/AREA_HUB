@@ -1,0 +1,160 @@
+/* Specific styles for the View Area container */
+.view-area-container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(to right, #141E30, #7697bd);
+  font-family: 'Roboto', sans-serif;
+  color: #e4e4e7;
+  min-height: 100vh;
+}
+
+/* Back link styling */
+.view-area-container .back-link {
+  align-self: flex-start;
+  color: #ff7f50;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.view-area-container .back-link:hover {
+  color: #ffa07a;
+}
+
+/* Area card styling */
+.view-area-container .area-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  background: #16213e;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-area-container .area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Area image container */
+.view-area-container .area-image {
+  flex: 1 1 40%;
+  background-color: #0f3460;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e4e4e7;
+  overflow: hidden; /* Ensures images are cropped if necessary */
+}
+
+.view-area-container .area-image img {
+  width: 100%; /* Ensure it stretches across the container */
+  height: 100%; /* Ensure it stretches vertically as well */
+  object-fit: cover; /* Ensures the image covers the container */
+  object-position: center center; /* Center the image */
+  border-radius: 15px;
+}
+
+/* Area details styling */
+.view-area-container .area-details {
+  flex: 1 1 60%;
+  padding: 30px;
+  color: #ffffff;
+}
+
+/* Area title styling */
+.view-area-container .area-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ff7f50;
+  text-transform: capitalize;
+}
+
+/* Info group styling */
+.view-area-container .info-group p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #b0b0b8;
+  margin-bottom: 10px;
+}
+
+.view-area-container .info-group p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Error and loading messages */
+.view-area-container .error,
+.view-area-container .loading {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.view-area-container .error {
+  color: #e63946;
+  background: rgba(230, 57, 70, 0.2);
+}
+
+.view-area-container .loading {
+  color: #ff7f50;
+  background: rgba(255, 127, 80, 0.2);
+}
+
+/* Unordered list styles */
+.view-area-container ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.view-area-container ul li {
+  font-size: 16px;
+  color: #b0b0b8;
+  line-height: 1.8;
+}
+
+.view-area-container ul li strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .view-area-container .area-card {
+    flex-direction: column; /* Stacks image and details vertically */
+  }
+
+  .view-area-container .area-image {
+    border-right: none;
+    border-bottom: 1px solid #e4e4e7;
+    height: 200px; /* Adjust height for mobile */
+  }
+
+  .view-area-container .area-details {
+    padding: 20px;
+  }
+
+  .view-area-container .area-title {
+    font-size: 28px;
+  }
+
+  .view-area-container .info-group p {
+    font-size: 14px;
+  }
+
+  .view-area-container ul li {
+    font-size: 14px;
+  }
+}

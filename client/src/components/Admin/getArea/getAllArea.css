@@ -1,0 +1,130 @@
+
+/* Specific background for the container of AreaTable */
+.AreaTable {
+  margin: 5% auto;
+  max-width: 90%;
+  background-color: #1e293b; /* Background color specific to this area */
+  border-radius: 15px;
+  overflow-x: auto;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #141E30, #243B55); /* Gradient background applied here */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #334155;
+}
+
+thead th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+tbody tr {
+  background-color: #0f172a;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #1e293b;
+}
+
+td {
+  color: #e2e8f0;
+}
+
+/* Action buttons styling */
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 8px;
+}
+
+#del {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+#del:hover {
+  background-color: #b91c1c;
+  transform: scale(1.05);
+}
+
+.buttonedit {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.buttonedit:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+.buttonview {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.buttonview:hover {
+  background-color: #059669;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .AreaTable {
+    padding: 15px;
+  }
+
+  th, td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}

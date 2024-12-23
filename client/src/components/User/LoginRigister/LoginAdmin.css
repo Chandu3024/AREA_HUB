@@ -1,0 +1,104 @@
+
+/* Login Page Container - Set background gradient here */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #141E30, #243B55); /* Background gradient applied here */
+}
+
+/* Login Box Styling */
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styling */
+.login-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.login-box p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+/* Input Group Styling */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border: 1px solid #00B4DB;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styling */
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to right, #00B4DB, #0083B0);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-button:hover {
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+}
+
+/* Error Message Styling */
+.error-message {
+  color: #FF4D4D;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Register Link Styling */
+.register-link {
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #00B4DB;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  color: #0083B0;
+  text-decoration: underline;
+}

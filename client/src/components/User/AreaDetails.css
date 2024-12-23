@@ -1,0 +1,475 @@
+/* Base Theme Variables */
+:root {
+  --background-dark: #0f172a;
+  --background-light: #1e293b;
+  --text-color: #e2e8f0;
+  --primary-accent: #3b82f6;
+  --secondary-accent: #22d3ee;
+  --highlight-color: #10b981;
+  --danger-color: #ef4444;
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --transition: 0.3s ease;
+}
+
+/* Container Styles */
+.area-details-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--background-dark);
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  color: var(--text-color);
+}
+
+/* Header Section */
+.area-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.area-header img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.area-header:hover img {
+  transform: scale(1.1);
+}
+
+.area-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+.area-header h1 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Info Section */
+.area-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--background-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.area-info h3 {
+  font-size: 1.8rem;
+  color: var(--primary-accent);
+}
+
+.area-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.area-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+}
+
+.area-info ul li {
+  background: var(--highlight-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform var(--transition);
+}
+
+.area-info ul li:hover {
+  transform: scale(1.1);
+}
+/* Gallery Section */
+.area-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts size based on the number of images */
+  gap: 1rem; /* Consistent spacing between images */
+  padding: 1rem;
+}
+
+.area-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Maintain a uniform aspect ratio */
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: default; /* No hover effects */
+}
+
+
+.area-gallery img:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+  box-shadow: var(--card-shadow);
+}
+
+
+/* Reviews Section */
+.area-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--background-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.area-reviews h4 {
+  font-size: 1.5rem;
+  color: var(--secondary-accent);
+}
+
+.area-reviews textarea {
+  width: 100%;
+  height: 120px;
+  background: #1c2938;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  resize: none;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.area-reviews textarea:focus {
+  outline: 2px solid var(--secondary-accent);
+}
+
+.area-reviews button {
+  align-self: flex-start;
+  background: var(--primary-accent);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.area-reviews button:hover {
+  background: var(--highlight-color);
+  transform: translateY(-2px);
+}
+
+/* Rating Section */
+.rating-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.rating-container .star {
+  font-size: 2rem;
+  color: #555;
+  cursor: pointer;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.rating-container .star:hover,
+.rating-container .star.selected {
+  color: var(--highlight-color);
+  transform: scale(1.2);
+}
+
+/* Favorite Button */
+.fav-btn {
+  display: inline-block;
+  align-self: center;
+  background: var(--danger-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background var(--transition), transform var(--transition);
+  cursor: pointer;
+}
+
+.fav-btn:hover {
+  background: #870031;
+  transform: translateY(-3px);
+}
+
+.fav-btn.favorited {
+  background: var(--highlight-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .area-header h1 {
+    font-size: 2rem;
+  }
+
+  .area-gallery img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .area-reviews textarea {
+    height: 100px;
+  }
+
+  .fav-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* Reported Crimes */
+.area-crime .crime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.crime-card {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.area-crime .crime-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+.grocery-card{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+ 
+
+.area-crime .crime-icon {
+  width: 50px;
+  height: 50px;
+}
+.area-crime :hover{
+  transform: scale(1.01);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Grocery Items */
+.area-grocery .grocery-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.area-grocery .grocery-table th,
+.area-grocery .grocery-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--background-light);
+}
+
+.area-grocery .grocery-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Events */
+.area-events .events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.area-events .event-card {
+  position: relative;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.area-events .event-date {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: var(--primary-accent);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Tourist Places */
+.area-tour-places .tour-places-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+
+.area-tour-places .tour-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.tour-card{
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  width : 200px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.area-tour-places .tour-image {
+  width: 120px;
+  height: 60px;
+}
+.tour-card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+.learn-more-btn {
+  padding: 0.5rem 1rem;
+  background: var(--primary-accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.learn-more-btn:hover {
+  background: var(--highlight-color);
+}
+
+/* Grocery List */
+.area-grocery .grocery-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.grocery-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--background-light);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.grocery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+.grocery-card-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  padding: 0.5rem;
+}
+
+.grocery-card-content {
+  flex: 1;
+  color: var(--text-color);
+}
+
+.grocery-card-content h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.grocery-card-content p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.grocery-card-content .badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 12px;
+}
+
+.badge.fruits {
+  background-color: #34d399;
+  color: white;
+}
+
+.badge.vegetables {
+  background-color: #22d3ee;
+  color: white;
+}
+
+.badge.beverages {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.badge.default {
+  background-color: #9ca3af;
+  color: white;
+}
+
+.rating{
+  color: #10b981;
+}
